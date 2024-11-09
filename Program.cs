@@ -1,7 +1,19 @@
+using _.Models;
+using _.Repositories;
+using _.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped(typeof(IRepository<Movie>), typeof(Repository<Movie>));
+builder.Services.AddScoped<IMovieService, MovieService>();
+
+
+builder.Services.AddDbContext<MyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"
+    )));
 
 var app = builder.Build();
 
