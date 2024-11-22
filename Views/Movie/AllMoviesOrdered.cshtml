@@ -1,0 +1,9 @@
+@model IEnumerable<_.Models.Movie>
+
+<h2>All Movies (Ordered)</h2>
+<ul>
+    @foreach (var movie in Model)
+    {
+        <li>@movie.Name</li>
+    }
+</ul>

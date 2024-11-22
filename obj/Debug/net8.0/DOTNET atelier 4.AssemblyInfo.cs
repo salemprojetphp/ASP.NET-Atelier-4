@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DOTNET atelier 4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b070ed848c4be2591472b8211b179276516d7a1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d5f031b83aa698e41cdde243b150c3c19698ac3")]
 [assembly: System.Reflection.AssemblyProductAttribute("DOTNET atelier 4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DOTNET atelier 4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

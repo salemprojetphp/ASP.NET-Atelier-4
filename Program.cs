@@ -8,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped(typeof(IRepository<Movie>), typeof(Repository<Movie>));
+builder.Services.AddScoped(typeof(IRepository<Genre>), typeof(Repository<Genre>));
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+
 
 
 builder.Services.AddDbContext<MyDbContext>(options =>
@@ -37,3 +40,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

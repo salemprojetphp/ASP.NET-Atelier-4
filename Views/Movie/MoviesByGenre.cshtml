@@ -1,0 +1,9 @@
+@model IEnumerable<_.Models.Movie>
+
+<h2>Movies by Genre</h2>
+<ul>
+    @foreach (var movie in Model)
+    {
+        <li>@movie.Name</li>
+    }
+</ul>

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using _.Models;
 using Microsoft.EntityFrameworkCore;
 namespace _.Repositories;
@@ -38,4 +39,22 @@ public class Repository<T> : IRepository<T> where T : class
             await _context.SaveChangesAsync();
         }
     }
+    public async Task<IEnumerable<T>> Where(Expression<Func<T, bool>> predicate)
+    {
+        return await _dbSet.Where(predicate).ToListAsync();
+    }
+    public async Task<IEnumerable<T>> OrderBy<TKey>(
+    Expression<Func<T, TKey>> keySelector, bool ascending = true)
+{
+    if (ascending)
+    {
+        return await _dbSet.OrderBy(keySelector).ToListAsync();
+    }
+    else
+    {
+        return await _dbSet.OrderByDescending(keySelector).ToListAsync();
+    }
+}
+
+    
 }

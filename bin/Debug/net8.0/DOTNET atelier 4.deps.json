@@ -9,8 +9,10 @@
       "DOTNET atelier 4/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
+          "Microsoft.EntityFrameworkCore.Tools.DotNet": "2.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6"
         },
         "runtime": {
@@ -1207,6 +1209,18 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.10"
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools.DotNet/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.0.7",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/dotnet-ef.dll": {
+            "assemblyVersion": "2.0.3.0",
+            "fileVersion": "2.0.3.18114"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -1398,6 +1412,24 @@
           }
         }
       },
+      "Microsoft.NETCore.App/2.0.7": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostPolicy": "2.0.7",
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "NETStandard.Library": "2.0.1"
+        }
+      },
+      "Microsoft.NETCore.DotNetAppHost/2.0.7": {},
+      "Microsoft.NETCore.DotNetHostPolicy/2.0.7": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostResolver": "2.0.7"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostResolver/2.0.7": {
+        "dependencies": {
+          "Microsoft.NETCore.DotNetAppHost": "2.0.7"
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.SqlServer.Server/1.0.0": {
@@ -1522,6 +1554,11 @@
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.1.1"
           }
+        }
+      },
+      "NETStandard.Library/2.0.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
         }
       },
       "Newtonsoft.Json/13.0.3": {
@@ -2462,6 +2499,13 @@
       "path": "microsoft.entityframeworkcore.tools/8.0.10",
       "hashPath": "microsoft.entityframeworkcore.tools.8.0.10.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Tools.DotNet/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iUxWokvgVsFR9qMbvvsXSlq/vcnl+DvPpdDlpPp17wh6XyZyh372AB0xnf6CR0frqPa0xpVQLdvX5xpZvVlKLQ==",
+      "path": "microsoft.entityframeworkcore.tools.dotnet/2.0.3",
+      "hashPath": "microsoft.entityframeworkcore.tools.dotnet.2.0.3.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2595,6 +2639,34 @@
       "path": "microsoft.net.stringtools/17.8.3",
       "hashPath": "microsoft.net.stringtools.17.8.3.nupkg.sha512"
     },
+    "Microsoft.NETCore.App/2.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cihy0s1kOr4qsPBrIujLVQN7RbaRK3NkhfntGox3tuyAw43hStebFligF+iznk7Ry2QfTW49qQOVklNxG+cqHg==",
+      "path": "microsoft.netcore.app/2.0.7",
+      "hashPath": "microsoft.netcore.app.2.0.7.nupkg.sha512"
+    },
+    "Microsoft.NETCore.DotNetAppHost/2.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2DoW/Z+QhZJkOo/Cp0GXv34598SqwZ+TfmydkPL/vTUd6nqCoBAEOkycZ10jmAj4jENRGR7GsBMlbWbiitbMgg==",
+      "path": "microsoft.netcore.dotnetapphost/2.0.7",
+      "hashPath": "microsoft.netcore.dotnetapphost.2.0.7.nupkg.sha512"
+    },
+    "Microsoft.NETCore.DotNetHostPolicy/2.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lsi5+I2qLirSjUyrQTpgzqka3NRad01jwDKkEdmZNjUGQ8Dic0selG7IP90hjbqi68JtLsvQE/6x4hqSmPHbcw==",
+      "path": "microsoft.netcore.dotnethostpolicy/2.0.7",
+      "hashPath": "microsoft.netcore.dotnethostpolicy.2.0.7.nupkg.sha512"
+    },
+    "Microsoft.NETCore.DotNetHostResolver/2.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JvVMc1P8hpKI0EiCXcheM5v68KOMnJM5I0LnbUK5U/0DUw1i4KfIMN8YoaS1vnr21M5o9ly08LOODh8z2jS8dw==",
+      "path": "microsoft.netcore.dotnethostresolver/2.0.7",
+      "hashPath": "microsoft.netcore.dotnethostresolver.2.0.7.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2678,6 +2750,13 @@
       "sha512": "sha512-pqYwzNqDL0QK1JFpAjpI/NPqyqLGpHLvVmA5Ec0LaSnbIDtEXxu0td16uunegb7c8xAnlcm4qkbIYUP5FfrFpA==",
       "path": "mono.texttemplating/2.3.1",
       "hashPath": "mono.texttemplating.2.3.1.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
+      "path": "netstandard.library/2.0.1",
+      "hashPath": "netstandard.library.2.0.1.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

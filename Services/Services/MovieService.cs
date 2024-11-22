@@ -7,15 +7,21 @@ using _.Services;
 public class MovieService : IMovieService
 {
     private readonly IRepository<Movie> _movieRepository;
+    private readonly IRepository<Genre> _genreRepository;
 
-    public MovieService(IRepository<Movie> movieRepository)
+    public MovieService(IRepository<Movie> movieRepository, IRepository<Genre> genreRepository)
     {
         _movieRepository = movieRepository;
+        _genreRepository = genreRepository;
     }
 
     public async Task<IEnumerable<Movie>> GetAllMoviesAsync()
     {
         return await _movieRepository.GetAllAsync();
+    }
+    public async Task<IEnumerable<Genre>> GetAllGenresAsync()
+    {
+        return await _genreRepository.GetAllAsync();
     }
 
     public async Task<Movie> GetMovieByIdAsync(int id)
@@ -42,4 +48,23 @@ public class MovieService : IMovieService
     {
         return await _movieRepository.GetByIdAsync(id) != null;
     }
+
+    public async Task<IEnumerable<Movie>> GetMoviesByGenreAsync(int genreId)
+    {
+        //Methode1: retourner la liste des films puis filtrer
+            // var movies = await _movieRepository.GetAllAsync();
+            // return movies.Where(m => m.GenreId == genreId).ToList();
+        //Methode2: ordonner directement avec une methode WHERE dans le repository
+        return await _movieRepository.Where(m => m.GenreId == genreId);
+    }
+
+    public async Task<IEnumerable<Movie>> GetAllMoviesOrderedAsync(){
+        //Methode1: retourner la liste des films puis ordonner
+            // var movies = await _movieRepository.GetAllAsync();
+            // return movies.OrderBy(m => m.Name).ToList();
+        //Methode2: ordonner directement avec une methode ORDERBY dans le repository
+        return await _movieRepository.OrderBy(m => m.Name);
+        
+    } 
 }
+

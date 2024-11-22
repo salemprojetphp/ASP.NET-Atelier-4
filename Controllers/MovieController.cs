@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using _.Models;
 using _.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DOTNET_atelier_4.Controllers
 {
@@ -42,6 +43,7 @@ namespace DOTNET_atelier_4.Controllers
         // GET: Movie/Create
         public IActionResult Create()
         {
+            ViewBag.Genres=new SelectList(_movieService.GetAllGenresAsync().Result,"Id","Name");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace DOTNET_atelier_4.Controllers
                 await _movieService.AddMovieAsync(movie);
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Genres=new SelectList(_movieService.GetAllGenresAsync().Result,"Id","Name");
             return View(movie);
         }
 
@@ -135,6 +138,20 @@ namespace DOTNET_atelier_4.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> MoviesByGenre(int genreId)
+        {
+            var movies = await _movieService.GetMoviesByGenreAsync(genreId);
+            return View(movies); 
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AllMoviesOrdered()
+        {
+            var movies = await _movieService.GetAllMoviesOrderedAsync();
+            return View(movies); // Pass the ordered movies to the view
         }
     }
 }
